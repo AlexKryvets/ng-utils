@@ -62,7 +62,7 @@ export function getGmtOffset(): number {
 }
 
 export function isDaylightSavingTime(): boolean {
-    const date = new Date;
+    const date = new Date();
     const date1 = new Date(date.getFullYear(), 0, 1);
     const date2 = new Date(date.getFullYear(), 6, 1);
     const standardTimezoneOffset = Math.max(date1.getTimezoneOffset(), date2.getTimezoneOffset());
