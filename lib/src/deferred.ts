@@ -1,12 +1,12 @@
 interface Deferred {
-    resolve: (value: unknown) => void;
+    resolve: (value?: unknown) => void;
     reject: () => void;
     promise: Promise<any> | null;
 }
 
 export function defer(): Deferred {
     const deferred: Deferred = {
-        resolve: (value: unknown) => {
+        resolve: (value?: unknown) => {
         }, reject: () => {
         }, promise: null
     };
