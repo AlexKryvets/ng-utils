@@ -5,7 +5,8 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "publish": "npm publish ./dist --@teamsoft:registry=https://registry.npmjs.org"
   },
   "private": true,
   "dependencies": {
