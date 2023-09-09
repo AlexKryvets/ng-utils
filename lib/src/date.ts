@@ -1,11 +1,11 @@
-export function dateFieldsToString(input: any, format: string, fields: any, recursive = false): void {
+export function dateFieldsToString(input: any, formatter: (date: Date) => string, fields: any, recursive = false): void {
     if (typeof input === 'object') {
         for (const key in input) {
             if (input.hasOwnProperty(key) && key.indexOf('$') !== 0) {
                 if (input[key] instanceof Date && (!fields || fields.indexOf(key) !== -1)) {
-                    input[key] = input[key].toString(format);
+                    input[key] = formatter(input[key]);
                 } else if (recursive && typeof input[key] === 'object') {
-                    dateFieldsToString(input[key], format, fields);
+                    dateFieldsToString(input[key], formatter, fields);
                 }
             }
         }
